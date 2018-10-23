@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+        <!--编码-->
+        <meta charset="utf-8">
+        <!--如果是IE浏览器，就自动调用最新的渲染方式-->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!--移动端视口的设置-->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+        <link href="./img/other/title.ico" rel="shortcut icon">
+        <title>云果达</title>
+
+
+        <!-- Bootstrap的核心css样式文件 -->
+
+        <link rel="stylesheet" href="css/base.css">
+        <link rel="stylesheet" href="css/swiper-3.4.2.min.css">
+        <link rel="stylesheet" href="css/index.css">
+
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries 因为在IE8及以下是不支持H5 C3 和 响应式，所以需要引入两个文件，让其支持-->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// 响应式的功能不能使用file://的查看，而需要使用http://  https://-->
+        <!--[if lt IE 9]>
+        <script src="lib/html5shiv/html5shiv.min.js"></script>
+        <script src="lib/respond/respond.js"></script>
+
+        <![endif]-->
+    <!-- 呼吸灯代码-->
+    <script>
+        ! function(e) {
+            function t(a) {
+                if (i[a]) return i[a].exports;
+                var n = i[a] = {
+                    exports: {},
+                    id: a,
+                    loaded: !1
+                };
+                return e[a].call(n.exports, n, n.exports, t), n.loaded = !0, n.exports
+            }
+            var i = {};
+            return t.m = e, t.c = i, t.p = "", t(0)
+        }([function(e, t) {
+            "use strict";
+            Object.defineProperty(t, "__esModule", {
+                value: !0
+            });
+            var i = window;
+            t["default"] = i.flex = function(e, t) {
+                var a = e || 100,
+                        n = t || 1,
+                        r = i.document,
+                        o = navigator.userAgent,
+                        d = o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i),
+                        l = o.match(/U3\/((\d+|\.){5,})/i),
+                        c = l && parseInt(l[1].split(".").join(""), 10) >= 80,
+                        p = navigator.appVersion.match(/(iphone|ipad|ipod)/gi),
+                        s = i.devicePixelRatio || 1;
+                p || d && d[1] > 534 || c || (s = 1);
+                var u = 1 / s,
+                        m = r.querySelector('meta[name="viewport"]');
+                m || (m = r.createElement("meta"), m.setAttribute("name", "viewport"), r.head.appendChild(m)), m.setAttribute("content", "width=device-width,user-scalable=no,initial-scale=" + u + ",maximum-scale=" + u + ",minimum-scale=" + u), r.documentElement.style.fontSize = a / 2 * s * n + "px"
+            }, e.exports = t["default"]
+        }]);
+        flex(100, 1);
+    </script>
+
+    <script type="text/javascript">
+
+        window.onload = function() {
+            var odiv = document.getElementById('div1');
+            var oul = odiv.getElementsByTagName('ul')[0];
+            var ali = oul.getElementsByTagName('li');
+            var spa = -2;
+            oul.innerHTML = oul.innerHTML + oul.innerHTML;
+            oul.style.width = ali[0].offsetWidth * ali.length + 'px';
+
+            function move() {
+                if (oul.offsetLeft < -oul.offsetWidth / 2) {
+                    oul.style.left = '0';
+                }
+                if (oul.offsetLeft > 0) {
+                    oul.style.left = -oul.offsetWidth / 2 + 'px'
+                }
+                oul.style.left = oul.offsetLeft + spa + 'px';
+            }
+            var timer = setInterval(move,20)
+
+//            odiv.onmousemove = function() {
+//                clearInterval(timer);
+//            }
+//            odiv.onmouseout = function() {
+//                timer = setInterval(move, 30)
+//            };
+            document.getElementsByTagName('a')[0].onclick = function() {
+                spa = -2;
+            }
+            document.getElementsByTagName('a')[1].onclick = function() {
+                spa = 2;
+            }
+        }
+    </script>
+    <script src="js/carousel-0.7.js"></script>
+    </head>
+<body>
+<!--导航、banner-->
+<div class="to_top">
+    <a href="#"><img src="./img/other/to_top.png" alt=""/></a>
+</div>
+<div class="nav rela">
+    <div class="nav-nav ab">
+        <div class="w cl rela">
+            <div class="fl logo">
+                <a href="index.html">
+                    <img src="./img/header/LOGO.png" alt="">
+                </a>
+            </div>
+            <div class="fr">
+                <ul>
+                    <li class="active">
+                        <a href="index.html">首&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;页</a>
+                    </li>
+                    <li>
+                        <a href="ygdInfo.html">公司简介</a>
+                    </li>
+                    <li>
+                        <a href="intro_product.html">产品介绍</a>
+                    </li>
+                    <li>
+                        <a href="###">我要加盟</a>
+                    </li>
+                    <li>
+                        <a href="###">新闻资讯</a>
+                    </li>
+                    <li>
+                        <a href="###">招贤纳士</a>
+                    </li>
+                    <li>
+                        <a href="contact_us.html">联系我们</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="app ab">
+                <a href="#"><img src="./img/header/button-e-mail-hover.png" class="app-l" alt=""></a>
+                <a href="#"><img src="./img/header/button-app-download-hover.png" class="app-r" alt=""></a>
+            </div>
+        </div>
+    </div>
+    <div class="nav-banner ab">
+
+        <div class="carousel" id="carousel">
+          <!-- 呼吸灯-->
+        </div>
+        <div class="nav-banner-text center ab">
+            <div class="text-ygd">
+                <img src="./img/banner/yunguoda.png" alt="">
+            </div>
+            <div class="text-line">
+                <span></span>
+            </div>
+            <div class="text-belive">
+                <img src="img/banner/text1.png" alt=""/>
+                <!--<p>水果行业最值得信赖的供应链服务商</p>-->
+            </div>
+            <div class="zhuanzhu">
+                <!--<p>专注·品质·信赖·创新·回馈·恒久</p>-->
+                <img src="img/banner/text5.png" alt=""/>
+            </div>
+            <div class="text-knowYgd">
+                了解云果达
+            </div>
+        </div>
+        <div class="nav-banner-mouse ab center">
+            <img src="./img/banner/gundong-button.png" alt="">
+        </div>
+    </div>
+</div>
+<!--云果达简介-->
+<div class="ygdInfo rela ">
+
+        <div class="ygdInfo_title ab ">
+            <p class="info">云果达简介</p>
+            <div class="line"></div>
+            <p class="pro">PROFILE</p>
+        </div>
+        <div class="ygdInfo_detail ab">
+            <p>深圳市云果达供应链有限公司成立2015年，公司主要产品是“云果达”。 </p>
+            <p>云果达是依托于大数据和移动互联网技术，通过B2B+O2O，实现优质水果高效流通的供应链平台。</p>
+            <p></p>
+        </div>
+
+</div>
+<!--我们的优势-->
+<div class="ourAdvantage rela">
+   <div class="ourAdvantage_img">
+       <!--<div class="ourAdvantage_title">我们的优势</div>-->
+       <div class="ourAdvantage_title"><img src="img/banner/text2.png" alt=""/></div>
+
+       <div class="text-line">
+           <span></span>
+       </div>
+   </div>
+    <div class="ourAdvantage_ccps w rela">
+        <!--<div class="ourAdvantage_contain ab">-->
+        <ul class="ourAdvantage_contain ab clearfix">
+            <li class="area cai">
+                <div class="cai_img">
+                    <img src="./img/main/photo1.png" alt=""/>
+                </div>
+                <div class="cai_flag flag ab">
+                    <img src="./img/main/icon1.png" alt=""/>
+                </div>
+                <div class="cai_text">采</div>
+                <p class="cai_detail">产地直采 &nbsp;&nbsp;绿色健康</p>
+                <p class="cai_detail">天然无害 &nbsp;&nbsp;新鲜多汁</p>
+            </li>
+            <li class="area cang">
+                <div class="cai_img">
+                    <img src="./img/main/photo2.png" alt=""/>
+                </div>
+                <div class="cang_flag flag  ab">
+                    <img src="./img/main/icon2.png" alt=""/>
+                </div>
+                <div class="cai_text">仓</div>
+                <p class="cai_detail">自动恒温 &nbsp;&nbsp;冷库保鲜</p>
+                <p class="cai_detail">环境清洁 &nbsp;&nbsp;定期检查</p>
+            </li>
+            <li class="area pei">
+                <div class="cai_img">
+                    <img src="./img/main/photo3.png" alt=""/>
+                </div>
+                <div class="pei_flag flag ab">
+                    <img src="./img/main/icon3.png" alt=""/>
+                </div>
+                <div class="cai_text">配</div>
+                <p class="cai_detail">自建团队 &nbsp;&nbsp;专业配送</p>
+                <p class="cai_detail">冷链运达 &nbsp;&nbsp;品质服务</p>
+            </li>
+            <li class="area xiao">
+                <div class="cai_img">
+                    <img src="./img/main/photo4.png" alt=""/>
+                </div>
+                <div class="xiao_flag flag ab">
+                    <img src="./img/main/icon4.png" alt=""/>
+                </div>
+                <div class="cai_text">销</div>
+                <p class="cai_detail">营销策划 &nbsp;&nbsp;专业培训</p>
+                <p class="cai_detail">服务意识 &nbsp;&nbsp;保鲜技巧</p>
+            </li>
+        </ul>
+    </div>
+
+</div>
+<!--轮播图-->
+<div class="rotation rela">
+            <!--<a href="#" style=" display: block; margin:0 auto; width: 50px;">向左走</a>
+			<a href="#" style=" display: block; margin:0 auto; width: 50px;">向右走</a>-->
+    <div id="div1">
+        <ul>
+            <li><img src="./img/main/weiyi3.png" alt=""/></li>
+            <li><img src="./img/main/weiyi4.png" alt=""/></li>
+            <li><img src="./img/main/weiyi5.png" alt=""/></li>
+            <li><img src="./img/main/weiyi6.png" alt=""/></li>
+        </ul>
+    </div>
+    <div class="rotation_text ab">
+        <p>我们的使命</p>
+        <p>让行业从业者回归生活本质</p>
+        <div class="rotation_line"></div>
+        <p>我们的价值观</p>
+        <p>专注 / 品质 / 信赖 / 创新 / 回馈 / 恒久</p>
+    </div>
+</div>
+<!--口号-->
+<div class="slogan">
+      <div class="slogan_box w">
+          <p><span>专注</span> · 专注这个行业、专注这份事业；农户更专注种植技术，店铺主更专注销售。</p>
+          <p><span>品质</span> · 水果品质、服务品质；员工与客户的生活品质。</p>
+          <p><span>信赖</span> · 员工与员工、公司之间的信赖；农户与商家对公司的信赖，消费者对商户的信赖。</p>
+          <p><span>创新</span> · 拥抱社会、主动出击；鼓励创新，敢于创新；用创新的思维提升能力。</p>
+          <p><span>回馈</span> · 公司对社会的回馈；对员工的回馈；对客户的回馈；对家的回馈。</p>
+          <p><span>恒久</span> · 永恒、长久.合作长久、事业长久、情谊长久</p>
+      </div>
+</div>
+<!--招聘-->
+<div class="recruitment">
+    <div class="recruitment_img">
+        <div class="recruitment_title"><img src="img/banner/text4.png" alt=""/></div>
+
+        <div class="text-line">
+            <span></span>
+        </div>
+        <div class="recruitment_detaile mt-60">在我司，众星云集，才高八斗；文臣武将，各显神通！千里马常有，而伯乐不常有!</div>
+        <div class="recruitment_detaile">如果你是“千里马”，就赶快加入我司一展宏图吧!</div>
+    </div>
+    <ul class="recruitment_info w clearfix">
+        <li class="zhaopin product_manager rela">
+            <a href="#">
+                <div class="product_img ab">
+                    <img src="./img/main/zhaopin1.png" alt=""/>
+                </div>
+                <div class="position_title">
+                    产品经理
+                </div>
+                <div class="date">
+                    <p>2017-09-01</p>
+                    <div class="position_line"></div>
+                    <p>全职 / 3年 /大专及以上</p>
+                </div>
+                <div class="for_detaile ab"></div>
+            </a>
+         </li>
+
+        <li class="zhaopin product_manager rela">
+            <a href="#">
+                <div class="product_img ab">
+                    <img src="./img/main/zhaopin2.png" alt=""/>
+                </div>
+                <div class="position_title">
+                    研发经理
+                </div>
+                <div class="date">
+                    <p>2017-09-01</p>
+                    <div class="position_line"></div>
+                    <p>全职 / 6年 /本科及以上</p>
+                </div>
+                <div class="for_detaile ab"></div>
+
+            </a>
+        </li>
+
+        <li class="zhaopin product_manager rela">
+            <a href="#">
+                <div class="product_img ab">
+                    <img src="./img/main/zhaopin3.png" alt=""/>
+                </div>
+                <div class="position_title">
+                    水果采购
+                </div>
+                <div class="date">
+                    <p>2017-09-01</p>
+                    <div class="position_line"></div>
+                    <p>全职 / 1年 /大专及以上</p>
+                </div>
+                <div class="for_detaile ab"></div>
+
+            </a>
+        </li>
+
+        <li class="zhaopin product_manager rela">
+            <a href="#">
+                <div class="product_img ab">
+                    <img src="./img/main/zhaopin4.png" alt=""/>
+                </div>
+                <div class="position_title">
+                    BD主管
+                </div>
+                <div class="date">
+                    <p>2017-09-01</p>
+                    <div class="position_line"></div>
+                    <p>全职 / 3年 /大专及以上</p>
+                </div>
+                <div class="for_detaile ab"></div>
+
+            </a>
+        </li>
+
+    </ul>
+    <div class="more_position ">
+        <a href="#"></a>
+    </div>
+</div>
+<!--底部-->
+<div class="foot">
+   <div class="foot_top rela">
+       <div class="foot_logo text-c">
+           <img src="./img/footer/LOGO.png" alt=""/>
+       </div>
+       <div class="footer_nav">
+           <ul class="cl">
+               <li class="current">
+                   <a href="index.html">首&nbsp;&nbsp;页</a>
+               </li>
+               <li>
+                   <a href="ygdInfo.html">公司简介</a>
+               </li>
+               <li>
+                   <a href="intro_product.html">产品介绍</a>
+               </li>
+               <li>
+                   <a href="###">我要加盟</a>
+               </li>
+               <li>
+                   <a href="###">新闻资讯</a>
+               </li>
+               <li>
+                   <a href="###">招贤纳士</a>
+               </li>
+               <li>
+                   <a href="contact_us.html">联系我们</a>
+               </li>
+           </ul>
+       </div>
+       <ul class="concat w">
+           <li class="email">
+               <p><a href="#">customer@vsea.com.cn</a></p>
+               <p class="phone">400-1515-771</p>
+               <p class="company">深圳市云果达供应链有限公司</p>
+               <p>水果行业最值得信赖的供应链服务商</p>
+           </li>
+           <li>
+               <a href="###" class="code_ios">
+               <div><img src="./img/footer/IOS-erweima.png" alt=""/></div>
+               <p>云果达app(IOS版) </p>
+           </a>
+           </li>
+           <li>
+               <a href="###" class="code_az">
+                   <div><img src="./img/footer/anzhuo-erweima.png" alt=""/></div>
+                   <p>云果达app(安卓版) </p>
+               </a>
+           </li>
+
+       </ul>
+
+
+   </div>
+   <div class="foot_bottom">
+       ©2015-2017&nbsp;云果达&nbsp;版权所有&nbsp;粤TCP备17114601号
+   </div>
+</div>
+<script src="js/jquery-1.10.1.min.js"></script>
+<script>
+
+
+    $(".nav ul li").on('click',function () {
+        $(this).addClass('active').siblings('li').removeClass('active');
+    });
+
+    $(".footer_nav ul li").on('click',function () {
+        $(this).addClass('current').siblings('li').removeClass('current');
+    });
+
+//    呼吸灯
+
+    var opts = {
+        index: 2, //开始显示的图片索引值
+        carousleTime: 2000, //轮播图速度（ms）
+        imgWidth:1920, //图片的宽度
+        parentDom: ".carousel", //必传参数 父容器
+
+        //            data:[                                 //必传参数 图片数据
+        //                {href:"#",img:"images/lb1.jpg"},
+        //                {href:"#",img:"images/lb2.jpg"},
+        //                {href:"#",img:"images/lb3.jpg"},
+        //            ],
+
+        data: [ //必传参数 图片数据
+            {
+                href: "#",
+                img: "./img/banner/lunbo-1.png"
+            }, {
+                href: "#",
+                img: "./img/banner/lunbo-2.png"
+            }, {
+                href: "#",
+                img: "./img/banner/lunbo-3.png"
+            }, {
+                href: "#",
+                img: "./img/banner/lunbo-4.png"
+            }, {
+                href: "#",
+                img: "./img/banner/lunbo-5.png"
+            },
+        ],
+    }
+    var carousel = new Carousel(opts);
+
+</script>
+</body>
+</html>
+
